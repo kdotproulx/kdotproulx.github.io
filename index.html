@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="styles/flickity.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<title>Crossfit Games</title>
+</head>
+<body>
+	<div class="wrapper">
+		<nav class="clearfix">
+			<div class="logo-holder">
+				<img src="assets/logo-crossfit-games.svg" alt="the crossfit games logo" class="main-logo">
+			</div>
+			<div class="events-container">
+				<div class="event highlighted">
+					<p>open</p>
+					<p>feb 23 - mar 27</p>
+				</div>
+				<div class="event">
+					<p>regionals</p>
+					<p>may 19 - june 4</p>
+				</div>
+				<div class="event">
+					<p>games</p>
+					<p>aug 1-6</p>
+				</div>
+				<div class="nav-action-btn">
+					<div class="register">
+						<p>register</p>
+					</div>
+					<div class="login">
+						<p>login</p>
+					</div>
+				</div>
+			</div>  <!-- end events container -->
+			<div class="main-navigation">
+			<p class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></p>
+				<ul>
+					<li><a href="#news">news</a></li>
+					<li><a href="#">leaderboard</a></li>
+					<li><a href="#">workouts</a></li>
+					<li><a href="#">featured athletes</a></li>
+				</ul>
+			</div> <!-- end main navigation -->
+		</nav> <!-- end nav -->
+
+		<div class="main-navigation-mobile">
+		<p class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></p>	
+			<ul>
+				<li><a href="#news">news</a></li>
+				<li><a href="#">leaderboard</a></li>
+				<li><a href="#">workouts</a></li>
+				<li><a href="#">featured athletes</a></li>
+			</ul>
+		</div> <!-- end main navigation mobile -->
+
+		<section class="home" id="home">
+			<div class="home-details">
+				<h1>the open</h1>
+				<p>Where grassroots meets greatness: Compete with hundreds of thousands of athletes in five workouts over five weeks. Do it for fun, your affiliate family, fitness or to reach regionals and fight for a chance to make it to the <span>CrossFit Games.</span></p>
+				<a href="#">register</a>
+			</div>
+		</section> <!-- end home -->
+
+		<section class="news" id="news">
+			<div class="news-details">
+				<p>march 15</p>
+				<p>nicole carroll's tips for open workout 17.2</p>
+				<a href="#">read more</a>
+				<div class="news-content-indicator">
+					<div class="news-icon">
+						<img src="assets/gallery.svg">
+					</div>
+					<div class="news-icon">
+						<img src="assets/camera.svg">
+					</div>
+				</div>
+			</div>
+			<div class="news-slider-img">
+			<div class="image-test"></div>
+				<img src="assets/image-deadlift.jpg" alt="">
+				<img src="assets/image-gear.jpg" alt="">
+				<img src="assets/image-ropeclimb.jpg" alt="">
+			</div>
+
+		</section> <!-- end news section -->
+
+		<div class="advertisement rogue">
+			<img src="assets/logo-rogue.png" alt="" class="rogue-logo">
+			<img src="assets/ad-rogue.jpg" alt="">
+		</div>
+
+		<div class="test">
+			
+		</div>
+
+	</div> <!-- end wrapper -->
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+	<script src="styles/smoothscroll.js"></script>
+	
+
+	<script>
+
+		$(document).on('ready', function(){
+			console.log('ready!')
+
+			$('.news-slider-img').flickity({
+				contain:true,
+				wrapAround:true,
+				draggable: false
+			});
+
+			var navHeight = -($('nav').outerHeight()) -50;
+
+			$('a').smoothScroll({
+				offset: navHeight,
+				speed: 700
+			});
+
+			$('.hamburger').on('click', function(){
+				// toggle class overlay on the menu
+				$('.main-navigation-mobile').toggleClass('overlay');
+
+				// toggle class show on the ul inside of the menu
+				// $('.main-navigation-mobile ul').toggleClass('show');
+			});
+
+			$('.main-navigation-mobile a').on('click', function(){
+				$('.main-navigation-mobile').toggleClass('overlay');
+			});
+
+		});
+
+	</script>
+
+
+</body>
+</html>
